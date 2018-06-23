@@ -1,0 +1,2 @@
+== Products
+include::{snippets}/product-integrated-test/should-create-product/auto-section.adoc[]
