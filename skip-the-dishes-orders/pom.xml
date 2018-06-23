@@ -11,5 +11,16 @@
 
     <artifactId>skip-the-dishes-orders</artifactId>
 
+    <dependencies>
+        <!-- Open tracing -->
+        <dependency>
+            <groupId>io.opentracing.contrib</groupId>
+            <artifactId>opentracing-spring-cloud-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.opentracing.contrib</groupId>
+            <artifactId>opentracing-spring-jaeger-starter</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -29,6 +29,8 @@
 		<java.version>1.8</java.version>
 		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
 		<lombok.version>1.16.18</lombok.version>
+		<opentracing-spring-cloud-starter.version>0.1.13</opentracing-spring-cloud-starter.version>
+		<opentracing-spring-jaeger-starter.version>0.1.1</opentracing-spring-jaeger-starter.version>
 	</properties>
 
 	<dependencyManagement>
@@ -52,6 +54,17 @@
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
 				<version>${lombok.version}</version>
+			</dependency>
+			<!-- Open tracing -->
+			<dependency>
+				<groupId>io.opentracing.contrib</groupId>
+				<artifactId>opentracing-spring-cloud-starter</artifactId>
+				<version>${opentracing-spring-cloud-starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.opentracing.contrib</groupId>
+				<artifactId>opentracing-spring-jaeger-starter</artifactId>
+				<version>${opentracing-spring-jaeger-starter.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
