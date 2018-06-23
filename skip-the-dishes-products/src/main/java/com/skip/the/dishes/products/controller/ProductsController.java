@@ -1,14 +1,14 @@
 package com.skip.the.dishes.products.controller;
 
 import com.skip.the.dishes.products.api.CreateProductRequest;
-import com.skip.the.dishes.products.api.CreateProductResponse;
-import com.skip.the.dishes.products.api.ProductTO;
+import com.skip.the.dishes.products.api.ProductResponse;
 import com.skip.the.dishes.products.api.ProductsApi;
 import com.skip.the.dishes.products.domain.Product;
 import com.skip.the.dishes.products.repository.ProductRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
@@ -30,14 +30,20 @@ public class ProductsController implements ProductsApi {
      * @title Creates a product
      */
     @Override
-    public CreateProductResponse create(@RequestBody @Valid CreateProductRequest createProductRequest) {
+    @ResponseBody
+    public ProductResponse create(@RequestBody @Valid CreateProductRequest createProductRequest) {
         Product product = mapper.map(createProductRequest, Product.class);
         product.setId(UUID.randomUUID().toString());
-        return mapper.map(productRepository.save(product), CreateProductResponse.class);
+        return mapper.map(productRepository.save(product), ProductResponse.class);
     }
 
+    /**
+     * Product controller
+     * @title Find a product by id
+     */
     @Override
-    public ProductTO getById(@PathVariable("productId") String productId) {
-        return ProductTO.builder().name("name").description("description").build();
+    @ResponseBody
+    public ProductResponse getById(@PathVariable("productId") String productId) {
+        return mapper.map(productRepository.findOne(productId), ProductResponse.class);
     }
 }

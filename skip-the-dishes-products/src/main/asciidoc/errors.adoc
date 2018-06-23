@@ -3,7 +3,7 @@
 ==== Invalid request
 If the request is invalid, then a HTTP Status Code `400 Bad Request` will be returned with the payload in the following format:
 
-include::{snippets}/customer-integrated-test/should-not-create-customer-without-document/http-response.adoc[]
+include::{snippets}/customer-integrated-test/should-not-create-invalid-product/http-response.adoc[]
 
 ==== Resource not found
 If the resource is not found the HTTP Status Code `404 Not Found` will be returned
