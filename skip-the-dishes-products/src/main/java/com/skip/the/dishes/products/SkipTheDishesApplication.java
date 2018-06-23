@@ -1,4 +1,4 @@
-package com.skip.the.dishes.skipthedishes;
+package com.skip.the.dishes.products;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
