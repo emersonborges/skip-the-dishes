@@ -6,6 +6,10 @@ Skip the Dishes test
 ## Architecture 
 ![](skip-the-dishes-test.png)
 
+## Running
+* docker-compose up
+* mvn clean install
+
 ## Distributed Tracing with Open Tracing and Jaeger
 
 * Open Tracing: It's a standard API cross language and vendor free (http://opentracing.io/)     
