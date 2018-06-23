@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductsController implements ProductsApi {
 
     @Override
-    public ProductTO getById(@PathVariable String productId) {
+    public ProductTO getById(@PathVariable("productId") String productId) {
         return ProductTO.builder().name("name").description("description").build();
     }
 }

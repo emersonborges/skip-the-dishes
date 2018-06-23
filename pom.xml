@@ -34,6 +34,7 @@
 		<opentracing-spring-jaeger-starter.version>0.1.1</opentracing-spring-jaeger-starter.version>
 		<spock-core.version>1.1-groovy-2.4</spock-core.version>
 		<cglib-nodep.version>3.2.4</cglib-nodep.version>
+		<spring-cloud-netflix-dependencies.version>1.4.4.RELEASE</spring-cloud-netflix-dependencies.version>
 	</properties>
 
 	<dependencyManagement>
@@ -73,6 +74,14 @@
 				<groupId>io.opentracing.contrib</groupId>
 				<artifactId>opentracing-spring-jaeger-starter</artifactId>
 				<version>${opentracing-spring-jaeger-starter.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-netflix-dependencies</artifactId>
+				<version>${spring-cloud-netflix-dependencies.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 
 			<dependency>
