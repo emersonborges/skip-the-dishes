@@ -33,6 +33,15 @@
             <groupId>io.opentracing.contrib</groupId>
             <artifactId>opentracing-spring-jaeger-starter</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.opentracing.contrib</groupId>
+            <artifactId>opentracing-kafka-spring</artifactId>
+        </dependency>
+        <!-- Kafka -->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
         <!-- Feign -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

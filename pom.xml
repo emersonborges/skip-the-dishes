@@ -35,6 +35,8 @@
 		<spock-core.version>1.1-groovy-2.4</spock-core.version>
 		<cglib-nodep.version>3.2.4</cglib-nodep.version>
 		<spring-cloud-netflix-dependencies.version>1.4.4.RELEASE</spring-cloud-netflix-dependencies.version>
+		<spring.kafka.version>1.3.3.RELEASE</spring.kafka.version>
+		<opentracing-kafka-spring.version>0.0.11</opentracing-kafka-spring.version>
 	</properties>
 
 	<dependencyManagement>
@@ -74,6 +76,17 @@
 				<groupId>io.opentracing.contrib</groupId>
 				<artifactId>opentracing-spring-jaeger-starter</artifactId>
 				<version>${opentracing-spring-jaeger-starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.opentracing.contrib</groupId>
+				<artifactId>opentracing-kafka-spring</artifactId>
+				<version>${opentracing-kafka-spring.version}</version>
+			</dependency>
+			<!-- Kafka -->
+			<dependency>
+				<groupId>org.springframework.kafka</groupId>
+				<artifactId>spring-kafka</artifactId>
+				<version>${spring.kafka.version}</version>
 			</dependency>
 
 			<dependency>
