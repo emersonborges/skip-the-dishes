@@ -22,7 +22,7 @@ public class OrdersController {
 
     @PostMapping("/orders")
     public void createOrder() {
-        productsApi.getById("1");
+        productsApi.getById("e1d7acb3-f752-4e74-977b-92bd64f2d694");
         kafkaTemplate.send(topic, "OrderCreated");
     }
 }

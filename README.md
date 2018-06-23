@@ -4,7 +4,7 @@
 Skip the Dishes test
 
 ## Architecture 
-![Alt text](skip-the-dishes-test.png)
+![](skip-the-dishes-test.png)
 
 ## Distributed Tracing with Open Tracing and Jaeger
 
@@ -12,7 +12,9 @@ Skip the Dishes test
 * Jaeger: It's a Open Tracing implementation (http://www.jaegertracing.io/)
 * Examples
     * Traces all communication between microservices (Sync and Async)
-    * Traces and identify where the problem is in a transaction view 
+    ![Alt text](jaeger.png)
+    * Traces and identify where the problem is in a transaction view
+    ![Alt text](jaeger-error.png)
 
 ## Technologies used
 * Java 8
