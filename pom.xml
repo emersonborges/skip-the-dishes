@@ -6,7 +6,10 @@
 	<groupId>com.skip.the.dishes</groupId>
 	<artifactId>skip-the-dishes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<modules>
+		<module>skip-the-dishes-products</module>
+	</modules>
+	<packaging>pom</packaging>
 
 	<name>skip-the-dishes</name>
 	<description>Demo project for Spring Boot</description>
@@ -29,25 +32,17 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
+				<groupId>com.skip.the.dishes</groupId>
+				<artifactId>skip-the-dishes-product</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
 				<version>${lombok.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
 
 	<build>
 		<plugins>
