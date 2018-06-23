@@ -8,6 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<modules>
 		<module>skip-the-dishes-products</module>
+		<module>skip-the-dishes-orders</module>
 	</modules>
 	<packaging>pom</packaging>
 
@@ -33,7 +34,12 @@
 		<dependencies>
 			<dependency>
 				<groupId>com.skip.the.dishes</groupId>
-				<artifactId>skip-the-dishes-product</artifactId>
+				<artifactId>skip-the-dishes-products</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.skip.the.dishes</groupId>
+				<artifactId>skip-the-dishes-orders</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
