@@ -49,6 +49,7 @@
 		<elasticsearch.version>6.2.4</elasticsearch.version>
         <modelmapper.version>2.0.0</modelmapper.version>
         <opentracing-elasticsearch-client.version>0.0.4</opentracing-elasticsearch-client.version>
+		<dockerfile-maven-plugin.version>1.4.3</dockerfile-maven-plugin.version>
 	</properties>
 
 	<dependencyManagement>
