@@ -12,6 +12,10 @@
     <artifactId>skip-the-dishes-orders</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
         <!-- Open tracing -->
         <dependency>
             <groupId>io.opentracing.contrib</groupId>
