@@ -20,7 +20,6 @@ Skip the Dishes test
 * Java 8
 * Spring Boot
 * Spock Test Framework
-* Postgres
 * Elasticsearch
 * Kafka
 * Opentracing
