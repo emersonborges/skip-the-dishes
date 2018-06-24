@@ -15,7 +15,4 @@ public class Product {
     private String name;
     private String description;
 
-    public String doBusinessLogic() {
-        return "Business Logic";
-    }
 }

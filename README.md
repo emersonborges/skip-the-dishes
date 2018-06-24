@@ -1,29 +1,70 @@
 [![Build Status](https://travis-ci.org/emersonborges/skip-the-dishes.svg?branch=master)](https://travis-ci.org/emersonborges/skip-the-dishes)
 [![codecov](https://codecov.io/gh/emersonborges/skip-the-dishes/branch/master/graph/badge.svg)](https://codecov.io/gh/emersonborges/skip-the-dishes)
-# skip-the-dishes
-Skip the Dishes test
-
-## Architecture 
-![](skip-the-dishes-test.png)
+# Skip the dishes
 
 ## Running
-* docker-compose up
-* mvn clean install
+* ```docker-compose up```
+* ```mvn clean install```
+* ```java -jar skip-the-dishes-products/target/skip-the-dishes-products.jar```
+* ```java -jar skip-the-dishes-orders/target/skip-the-dishes-orders.jar```
+* ```java -jar skip-the-dishes-orders-processor/target/skip-the-dishes-orders-processor.jar```
 
-## Distributed Tracing with Open Tracing and Jaeger
+## Architecture 
+Microservices architecture separated by products and orders domain.
 
-* Open Tracing: It's a standard API cross language and vendor free (http://opentracing.io/)     
-* Jaeger: It's a Open Tracing implementation (http://www.jaegertracing.io/)
+![Full architecture](skip-the-dishes-test.png) 
+
+* The products domain has a REST API with CRUD operations and is used for full-text search on products attributes. 
+It uses Elasticsearch for persistence that is a very scalable document database, 
+with built in indexing and full-text search.
+
+* Orders domain has a REST API for orders CRUD operations and a orders processor, 
+that handles all the orders flow after it is created, like payment, shipping and other 
+processes specific to the business.
+    * Orders REST API uses Postgres for persistence with your own database, 
+    separated from other domain's database. In this way, it will not concur with other applications.
+    After it persists in Postgres it publishes a ```OrderCreated``` event for 
+    orders processor and any application that is interested in this event.
+    * Orders Processor process orders Events asynchronously, reading events 
+    from Kafka and processing all the business logic by communicating with 
+    another microservices needed.
+    
+### Distributed tracing with Opentracing and Jaeger
+
+On a microservices architecture, it's very hard to see what's happening in a transactional manner. 
+When there are a lot of microservices communicating with each other, you can't trace 
+all the necessary steps for doing same business operation across multiple applications running 
+independently, with multiple instances, in different regions. 
+Besides that it's hard to know how long an operation is taking between distributed applications.
+
+Opentracing it's a standard API that standardizes the terms and operations 
+for distributed tracing. It's available in many languages and has a lot of technology integration, 
+for example in Java, it has some facilities for Spring Web, Feign, Elasticsearch, JDBC, and many others.
+
+Many distributed tracing vendors implement this standard, like Jaeger, Zipkin and many others.
+
+It's was used on this project Open Tracing Java API with Jaeger implementation 
+for all microservices. The operations that are being traced are:
+* Any request on REST API
+* Any database operation
+* Any synchronous communication between microservices via REST APIs
+* Any asynchronous communication between microservices via Kafka
+* Any error that occurs doing the operations above
+* Time for each of the operations above 
 * Examples
     * Traces all communication between microservices (Sync and Async)
     ![Alt text](jaeger.png)
     * Traces and identify where the problem is in a transaction view
     ![Alt text](jaeger-error.png)
 
+Links for reference:
+* Open Tracing: http://opentracing.io     
+* Jaeger: http://www.jaegertracing.io
+
 ## Technologies used
 * Java 8
 * Spring Boot
-* Spock Test Framework
+* Spock Framework (Unit test)
 * Elasticsearch
 * Kafka
 * Opentracing
