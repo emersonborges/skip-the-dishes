@@ -70,6 +70,38 @@ Links for reference:
 * Opentracing
 * Jaeger
 
+## Mapped tasks
+* [x] Products microserce
+    * [x] Elasticsearch integration
+    * [x] Create product
+    * [x] Get product by id
+    * [] Get product by term
+    * [] Update product
+    * [] Delete product
+    * [x] OpenTracing integration
+    * [x] Docker image
+    * [] Publish image to DockerHub
+    * [] Docker Compose to run locally
+* [x] Orders microservice
+    * [] Postgres integration
+    * [x] Create order
+    * [] Get order by id
+    * [x] OpenTracing integration
+    * [x] Docker image
+    * [] Publish image to DockerHub
+    * [] Docker Compose to run locally
+* [x] Orders Processor microservice
+    * [x] Consumes kafka message
+    * [x] OpenTracing integration
+    * [x] Docker image
+    * [] Publish image to DockerHub
+    * [] Docker Compose to run locally
+
+## To improve
+* Use a circuit breaker to handle microservices failure
+* Use retry and dead letter policy when consuming kafka messages
+* Use keycloak for authentication and authorization
+
 ## What was done after the test
 * Documentation improvement
 * Spring Boot maven plugin to run orders and orders-processor modules
