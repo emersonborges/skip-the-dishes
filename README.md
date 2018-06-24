@@ -69,3 +69,7 @@ Links for reference:
 * Kafka
 * Opentracing
 * Jaeger
+
+## What was done after the test
+* Documentation improvement
+* Spring Boot maven plugin to run orders and orders-processor modules
