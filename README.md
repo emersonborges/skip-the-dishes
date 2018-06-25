@@ -10,10 +10,16 @@
 * ```java -jar skip-the-dishes-orders-processor/target/skip-the-dishes-orders-processor.jar```
 
 ### Endpoints
-* producs: http://localhost:8080/products
-* orders: http://localhost:8081/orders
-* elasticsearch: http://localhost:9092
+* producs resource: http://localhost:8080/products
+* orders resource: http://localhost:8081/orders
+* elasticsearch client: http://localhost:9092
 * jaeger ui: http://localhost:16686
+
+### Documentation
+* [products REST API](http://emerson-skip-the-dishes-products.bitballoon.com)
+
+### Postman collection
+[products and orders REST API](https://www.getpostman.com/collections/7c6de8fee8c1cfcae81b) 
 
 ## Architecture 
 Microservices architecture separated by products and orders domain.
