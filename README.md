@@ -9,6 +9,12 @@
 * ```java -jar skip-the-dishes-orders/target/skip-the-dishes-orders.jar```
 * ```java -jar skip-the-dishes-orders-processor/target/skip-the-dishes-orders-processor.jar```
 
+### Endpoints
+* producs: http://localhost:8080/products
+* orders: http://localhost:8081/orders
+* elasticsearch: http://localhost:9092
+* jaeger ui: http://localhost:16686
+
 ## Architecture 
 Microservices architecture separated by products and orders domain.
 
@@ -61,6 +67,11 @@ Links for reference:
 * Open Tracing: http://opentracing.io     
 * Jaeger: http://www.jaegertracing.io
 
+### To improve
+* Use a circuit breaker to handle microservices failure
+* Use retry and dead letter policy when consuming kafka messages
+* Use keycloak for authentication and authorization
+
 ## Technologies used
 * Java 8
 * Spring Boot
@@ -75,32 +86,27 @@ Links for reference:
     * [x] Elasticsearch integration
     * [x] Create product
     * [x] Get product by id
-    * [] Get product by term
-    * [] Update product
-    * [] Delete product
+    * [ ] Get product by term
+    * [ ] Update product
+    * [ ] Delete product
     * [x] OpenTracing integration
     * [x] Docker image
-    * [] Publish image to DockerHub
-    * [] Docker Compose to run locally
+    * [ ] Publish image to DockerHub
+    * [ ] Docker Compose to run locally
 * [x] Orders microservice
-    * [] Postgres integration
+    * [ ] Postgres integration
     * [x] Create order
-    * [] Get order by id
+    * [ ] Get order by id
     * [x] OpenTracing integration
     * [x] Docker image
-    * [] Publish image to DockerHub
-    * [] Docker Compose to run locally
+    * [ ] Publish image to DockerHub
+    * [ ] Docker Compose to run locally
 * [x] Orders Processor microservice
     * [x] Consumes kafka message
     * [x] OpenTracing integration
     * [x] Docker image
-    * [] Publish image to DockerHub
-    * [] Docker Compose to run locally
-
-## To improve
-* Use a circuit breaker to handle microservices failure
-* Use retry and dead letter policy when consuming kafka messages
-* Use keycloak for authentication and authorization
+    * [ ] Publish image to DockerHub
+    * [ ] Docker Compose to run locally
 
 ## What was done after the test
 * Documentation improvement
