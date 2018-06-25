@@ -75,27 +75,27 @@ Links for reference:
     * [x] Elasticsearch integration
     * [x] Create product
     * [x] Get product by id
-    * [] Get product by term
-    * [] Update product
-    * [] Delete product
+    * [ ] Get product by term
+    * [ ] Update product
+    * [ ] Delete product
     * [x] OpenTracing integration
     * [x] Docker image
-    * [] Publish image to DockerHub
-    * [] Docker Compose to run locally
+    * [ ] Publish image to DockerHub
+    * [ ] Docker Compose to run locally
 * [x] Orders microservice
-    * [] Postgres integration
+    * [ ] Postgres integration
     * [x] Create order
-    * [] Get order by id
+    * [ ] Get order by id
     * [x] OpenTracing integration
     * [x] Docker image
-    * [] Publish image to DockerHub
-    * [] Docker Compose to run locally
+    * [ ] Publish image to DockerHub
+    * [ ] Docker Compose to run locally
 * [x] Orders Processor microservice
     * [x] Consumes kafka message
     * [x] OpenTracing integration
     * [x] Docker image
-    * [] Publish image to DockerHub
-    * [] Docker Compose to run locally
+    * [ ] Publish image to DockerHub
+    * [ ] Docker Compose to run locally
 
 ## To improve
 * Use a circuit breaker to handle microservices failure
